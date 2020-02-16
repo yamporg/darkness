@@ -1,4 +1,5 @@
 ![CI](https://github.com/yamporg/darkness/workflows/CI/badge.svg)
+![CD](https://github.com/yamporg/darkness/workflows/CD/badge.svg)
 
 # Darkness
 

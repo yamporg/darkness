@@ -9,11 +9,13 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
         classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+        classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.4.0'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'com.matthewprenger.cursegradle'
 
 version = '0.0.1'
 group = 'io.github.yamporg.darkness'
@@ -54,6 +56,7 @@ reobf {
         classpath = sourceSets.main.compileClasspath
     }
 }
+tasks.shadowJar.finalizedBy reobfShadowJar
 
 processResources {
     inputs.property 'version', project.version
@@ -66,5 +69,22 @@ processResources {
 
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+curseforge {
+    if (project.hasProperty('curseForgeApiKey')) {
+        apiKey = project.curseForgeApiKey
+    }
+    project {
+        id = '363102'
+        releaseType = 'release'
+
+        changelogType = 'markdown'
+        changelog = file('CHANGELOG.md')
+
+        mainArtifact shadowJar
+        addArtifact sourceJar
+        addArtifact jar
     }
 }
