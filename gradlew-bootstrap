@@ -1,0 +1,52 @@
+#!/bin/sh -e
+# Gradle Wrapper Bootstrap
+
+version=4.10.3
+distURL=https://services.gradle.org/distributions/gradle-${version}-bin.zip
+
+bootstrap() {
+	tmpdir=`mktemp -d`
+	trap cleanup EXIT
+
+	gradle=gradle
+	if ! command -v gradle >/dev/null; then
+		tmpfile="${tmpdir}"/gradle.zip
+		download "${tmpdir}/gradle.zip" "${distURL}"
+		unzip -q -d "${tmpdir}" -- "${tmpfile}"
+		gradle="${tmpdir}/gradle-${version}/bin/gradle"
+	fi
+
+	command -- "${gradle}" -q --no-daemon -p "${tmpdir}" \
+		wrapper --gradle-distribution-url "${distURL}"
+	mv "${tmpdir}"/gradlew "${tmpdir}/gradle" .
+
+	cleanup
+}
+
+download() {
+	if command -v curl >/dev/null; then
+		curl -s -L -o "$1" -- "$2"
+	elif command -v wget >/dev/null; then
+		wget -q -O "$1" -- "$2"
+	else
+		echo "Bootstraping requires either curl or wget."
+		return 1
+	fi
+}
+
+cleanup() {
+	if [ -d "${tmpdir}" ]; then
+		rm -r -- "${tmpdir}"
+	fi
+}
+
+if [ ! -z "${__exec_guard__+x}" ]; then
+	echo "Something has gone horribly wrong."
+	exit 1
+fi
+export __exec_guard__=
+
+echo "Bootstrapping ${version} from ${distURL}"
+bootstrap
+
+exec ./gradlew "$@"

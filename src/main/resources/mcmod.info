@@ -1,0 +1,12 @@
+[
+{
+  "modid": "darkness",
+  "name": "Darkness",
+  "description": "Disables minimal brightness.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/yamporg/darkness",
+  "updateUrl": "",
+  "authorList": ["Ivan Trubach"]
+}
+]

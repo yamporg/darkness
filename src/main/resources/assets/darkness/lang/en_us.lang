@@ -1,0 +1,17 @@
+darkness.general=General
+darkness.general.tooltip=
+
+darkness.general.enable=Enable Darkness
+darkness.general.enable.tooltip=Enables all modifications. Disable this option if you don’t like darkness.
+
+darkness.general.enabledarknether=Darkness in The Nether
+darkness.general.enabledarknether.tooltip=Disables minimal brightness level in The Nether dimension.
+
+darkness.general.enabledarkend=Darkness in The End
+darkness.general.enabledarkend.tooltip=Disables minimal brightness level in The End dimension.
+
+darkness.general.hardcore=Hardcore Darkness
+darkness.general.hardcore.tooltip=Pitch-black nights. Disables minimal brightness level on the surface.
+
+darkness.constants=Settings
+darkness.constants.tooltip=Manual minimal brightness level adjustment.

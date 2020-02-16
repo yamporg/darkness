@@ -1,0 +1,17 @@
+darkness.general=Основные
+darkness.general.tooltip=
+
+darkness.general.enable=Включить тьму
+darkness.general.enable.tooltip=Отключает все модификации. Выключите эту опцию, если вам не нравится тьма.
+
+darkness.general.enabledarknether=Тьма в Нижнем мире
+darkness.general.enabledarknether.tooltip=Отключает минимальный уровень освещения в Нижнем мире.
+
+darkness.general.enabledarkend=Тьма в Краю
+darkness.general.enabledarkend.tooltip=Отключает минимальный уровень освещения в Краю.
+
+darkness.general.hardcore=Кромешная тьма
+darkness.general.hardcore.tooltip=Ночью темно, хоть глаз выколи. Отключает минимальный уровень освещения поверхности.
+
+darkness.constants=Настройки
+darkness.constants.tooltip=Ручное изменение минимального уровня освещения.
