@@ -1,1 +1,1 @@
-- Initial release
+- Updated description in mcmod.info

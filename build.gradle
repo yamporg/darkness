@@ -17,7 +17,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'com.matthewprenger.cursegradle'
 
-version = '0.0.1'
+version = '0.0.2'
 group = 'io.github.yamporg.darkness'
 
 sourceCompatibility = targetCompatibility = '1.8'

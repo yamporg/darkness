@@ -2,7 +2,7 @@
 {
   "modid": "darkness",
   "name": "Darkness",
-  "description": "Disables minimal brightness.",
+  "description": "Changes minimal light/brightness level.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://github.com/yamporg/darkness",
