@@ -16,22 +16,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EntityRenderer.class)
 public abstract class MixinEntityRenderer {
-    @Shadow
-    private Minecraft mc;
-    @Shadow
-    private float torchFlickerX;
-    @Shadow
-    private float bossColorModifier;
-    @Shadow
-    private float bossColorModifierPrev;
-    @Shadow
-    private int[] lightmapColors;
+    @Shadow private Minecraft mc;
+    @Shadow private float torchFlickerX;
+    @Shadow private float bossColorModifier;
+    @Shadow private float bossColorModifierPrev;
+    @Shadow private int[] lightmapColors;
 
     @Inject(
             method = "updateLightmap",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/renderer/texture/DynamicTexture;updateDynamicTexture()V"),
+            at =
+                    @At(
+                            value = "INVOKE",
+                            target =
+                                    "Lnet/minecraft/client/renderer/texture/DynamicTexture;updateDynamicTexture()V"),
             allow = 1)
     private void onUpdateLightmap(float partialTicks, CallbackInfo ci) {
         // Use vanilla lightmap for night vision effect.
