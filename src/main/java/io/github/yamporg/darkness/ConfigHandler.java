@@ -6,13 +6,14 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod.EventBusSubscriber(modid = DarknessMod.MODID)
+@Mod.EventBusSubscriber(modid = DarknessMod.MOD_ID)
 public class ConfigHandler {
     @SubscribeEvent
     public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (!event.getModID().equals(DarknessMod.MODID)) {
+        String modID = event.getModID();
+        if (!DarknessMod.MOD_ID.equals(modID)) {
             return;
         }
-        ConfigManager.sync(DarknessMod.MODID, Config.Type.INSTANCE);
+        ConfigManager.sync(modID, Config.Type.INSTANCE);
     }
 }

@@ -33,3 +33,6 @@ darkness.main.blacklistbyid.tooltip=Blacklist dimensions by ID.
 
 darkness.main.blacklistbyname=Blacklist by name
 darkness.main.blacklistbyname.tooltip=Blacklist dimensions by name.
+
+darkness.main.disableconfiggui=Disable config GUI
+darkness.main.disableconfiggui.tooltip=Disables in-game config GUI.

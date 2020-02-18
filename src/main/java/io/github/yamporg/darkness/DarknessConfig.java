@@ -2,8 +2,10 @@ package io.github.yamporg.darkness;
 
 import net.minecraftforge.common.config.Config;
 
-@Config(modid = DarknessMod.MODID, category = "main")
+@Config(modid = DarknessMod.MOD_ID, category = "main")
 public class DarknessConfig {
+    public static boolean disableConfigGui = false;
+
     public static boolean darkOverworld = true;
     public static boolean darkNether = true;
     public static boolean darkEnd = true;

@@ -6,7 +6,7 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.Mixins;
 
-@IFMLLoadingPlugin.Name(DarknessMod.MODID)
+@IFMLLoadingPlugin.Name(DarknessMod.MOD_ID)
 @IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
 public class DarknessLoadingPlugin implements IFMLLoadingPlugin {
     public DarknessLoadingPlugin() {

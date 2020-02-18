@@ -33,3 +33,6 @@ darkness.main.blacklistbyid.tooltip=Чёрный список по иденти�
 
 darkness.main.blacklistbyname=Чёрный список по названию
 darkness.main.blacklistbyname.tooltip=Чёрный список по названию типа измерения.
+
+darkness.main.disableconfiggui=Отключить интерфейс конфигурации
+darkness.main.disableconfiggui.tooltip=Отключает внутриигровой графический интерфейс конфигурации.
