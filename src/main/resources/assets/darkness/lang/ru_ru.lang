@@ -1,35 +1,35 @@
-darkness.general=Тьма
-darkness.general.tooltip=
+darkness.main=Тьма
+darkness.main.tooltip=
 
-darkness.general.darkoverworld=Тьма в Верхнем мире
-darkness.general.darkoverworld.tooltip=Отключает минимальный уровень освещения в Верхнем мире.
+darkness.main.darkoverworld=Тьма в Верхнем мире
+darkness.main.darkoverworld.tooltip=Отключает минимальный уровень освещения в Верхнем мире.
 
-darkness.general.darknether=Тьма в Нижнем мире
-darkness.general.darknether.tooltip=Отключает минимальный уровень освещения в Нижнем мире.
+darkness.main.darknether=Тьма в Нижнем мире
+darkness.main.darknether.tooltip=Отключает минимальный уровень освещения в Нижнем мире.
 
-darkness.general.darkend=Тьма в Краю
-darkness.general.darkend.tooltip=Отключает минимальный уровень освещения в Краю.
+darkness.main.darkend=Тьма в Краю
+darkness.main.darkend.tooltip=Отключает минимальный уровень освещения в Краю.
 
-darkness.general.darkdefault=Тьма с небом
-darkness.general.darkdefault.tooltip=Отключает минимальный уровень освещения в измерениях с небом.
+darkness.main.darkdefault=Тьма с небом
+darkness.main.darkdefault.tooltip=Отключает минимальный уровень освещения в измерениях с небом.
 
-darkness.general.darkskyless=Тьма без неба
-darkness.general.darkskyless.tooltip=Отключает минимальный уровень освещения в измерениях без неба.
+darkness.main.darkskyless=Тьма без неба
+darkness.main.darkskyless.tooltip=Отключает минимальный уровень освещения в измерениях без неба.
 
-darkness.general.darknetherfog=Без тумана в Нижнем мире
-darkness.general.darknetherfog.tooltip=Отключает красный туман в Нижнем мире (заметно с эффектом “Ночное зрения”).
+darkness.main.darknetherfog=Без тумана в Нижнем мире
+darkness.main.darknetherfog.tooltip=Отключает красный туман в Нижнем мире (заметно с эффектом “Ночное зрения”).
 
-darkness.general.darkendfog=Без тумана в Краю
-darkness.general.darkendfog.tooltip=Отключает розовый туман в Краю (заметно с эффектом “Ночное зрения”).
+darkness.main.darkendfog=Без тумана в Краю
+darkness.main.darkendfog.tooltip=Отключает розовый туман в Краю (заметно с эффектом “Ночное зрения”).
 
-darkness.general.hardcore=Кромешная тьма
-darkness.general.hardcore.tooltip=Ночью темно, хоть глаз выколи. Отключает динамический лунный свет.
+darkness.main.hardcore=Кромешная тьма
+darkness.main.hardcore.tooltip=Ночью темно, хоть глаз выколи. Отключает динамический лунный свет.
 
-darkness.general.moonphasefactors=Яркость фаз луны
-darkness.general.moonphasefactors.tooltip=Лунный свет для каждой из восьми фаз.
+darkness.main.moonphasefactors=Яркость фаз луны
+darkness.main.moonphasefactors.tooltip=Лунный свет для каждой из восьми фаз.
 
-darkness.general.blacklistbyid=Чёрный список по ID
-darkness.general.blacklistbyid.tooltip=Чёрный список по идентификатору измерения.
+darkness.main.blacklistbyid=Чёрный список по ID
+darkness.main.blacklistbyid.tooltip=Чёрный список по идентификатору измерения.
 
-darkness.general.blacklistbyname=Чёрный список по названию
-darkness.general.blacklistbyname.tooltip=Чёрный список по названию типа измерения.
+darkness.main.blacklistbyname=Чёрный список по названию
+darkness.main.blacklistbyname.tooltip=Чёрный список по названию типа измерения.

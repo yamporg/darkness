@@ -2,7 +2,7 @@ package io.github.yamporg.darkness;
 
 import net.minecraftforge.common.config.Config;
 
-@Config(modid = DarknessMod.MODID)
+@Config(modid = DarknessMod.MODID, category = "main")
 public class DarknessConfig {
     public static boolean darkOverworld = true;
     public static boolean darkNether = true;

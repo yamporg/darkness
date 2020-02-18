@@ -1,35 +1,35 @@
-darkness.general=Darkness
-darkness.general.tooltip=
+darkness.main=Darkness
+darkness.main.tooltip=
 
-darkness.general.darkoverworld=Darkness in the Overworld
-darkness.general.darkoverworld.tooltip=Disables minimal brightness level in the Overworld dimension.
+darkness.main.darkoverworld=Darkness in the Overworld
+darkness.main.darkoverworld.tooltip=Disables minimal brightness level in the Overworld dimension.
 
-darkness.general.darknether=Darkness in the Nether
-darkness.general.darknether.tooltip=Disables minimal brightness level in the Nether dimension.
+darkness.main.darknether=Darkness in the Nether
+darkness.main.darknether.tooltip=Disables minimal brightness level in the Nether dimension.
 
-darkness.general.darkend=Darkness in the End
-darkness.general.darkend.tooltip=Disables minimal brightness level in the End dimension.
+darkness.main.darkend=Darkness in the End
+darkness.main.darkend.tooltip=Disables minimal brightness level in the End dimension.
 
-darkness.general.darkdefault=Darkness with sky
-darkness.general.darkdefault.tooltip=Disables minimal brightness level in the other dimensions with sky.
+darkness.main.darkdefault=Darkness with sky
+darkness.main.darkdefault.tooltip=Disables minimal brightness level in the other dimensions with sky.
 
-darkness.general.darkskyless=Darkness without sky
-darkness.general.darkskyless.tooltip=Disables minimal brightness level in the other dimensions without sky.
+darkness.main.darkskyless=Darkness without sky
+darkness.main.darkskyless.tooltip=Disables minimal brightness level in the other dimensions without sky.
 
-darkness.general.darknetherfog=No fog in the Nether
-darkness.general.darknetherfog.tooltip=Disables red fog in the End dimension (noticeable with “Night Vision” effect).
+darkness.main.darknetherfog=No fog in the Nether
+darkness.main.darknetherfog.tooltip=Disables red fog in the End dimension (noticeable with “Night Vision” effect).
 
-darkness.general.darkendfog=No fog in the End
-darkness.general.darkendfog.tooltip=Disables pink fog in the End dimension (noticeable with “Night Vision” effect).
+darkness.main.darkendfog=No fog in the End
+darkness.main.darkendfog.tooltip=Disables pink fog in the End dimension (noticeable with “Night Vision” effect).
 
-darkness.general.hardcore=Hardcore Darkness
-darkness.general.hardcore.tooltip=Pitch-black nights. Disables dynamic moon light.
+darkness.main.hardcore=Hardcore Darkness
+darkness.main.hardcore.tooltip=Pitch-black nights. Disables dynamic moon light.
 
-darkness.general.moonphasefactors=Moon Phases Brightness
-darkness.general.moonphasefactors.tooltip=Moon light for each of the 8 moon phases.
+darkness.main.moonphasefactors=Moon Phases Brightness
+darkness.main.moonphasefactors.tooltip=Moon light for each of the 8 moon phases.
 
-darkness.general.blacklistbyid=Blacklist by ID
-darkness.general.blacklistbyid.tooltip=Blacklist dimensions by ID.
+darkness.main.blacklistbyid=Blacklist by ID
+darkness.main.blacklistbyid.tooltip=Blacklist dimensions by ID.
 
-darkness.general.blacklistbyname=Blacklist by name
-darkness.general.blacklistbyname.tooltip=Blacklist dimensions by name.
+darkness.main.blacklistbyname=Blacklist by name
+darkness.main.blacklistbyname.tooltip=Blacklist dimensions by name.
