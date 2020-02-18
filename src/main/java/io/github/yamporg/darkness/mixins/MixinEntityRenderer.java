@@ -22,13 +22,12 @@ public abstract class MixinEntityRenderer {
     @Shadow private float bossColorModifierPrev;
     @Shadow private int[] lightmapColors;
 
+    private static final String UPDATE_DYNAMIC_TEXTURE =
+            "Lnet/minecraft/client/renderer/texture/DynamicTexture;updateDynamicTexture()V";
+
     @Inject(
             method = "updateLightmap",
-            at =
-                    @At(
-                            value = "INVOKE",
-                            target =
-                                    "Lnet/minecraft/client/renderer/texture/DynamicTexture;updateDynamicTexture()V"),
+            at = @At(value = "INVOKE", target = UPDATE_DYNAMIC_TEXTURE),
             allow = 1)
     private void onUpdateLightmap(float partialTicks, CallbackInfo ci) {
         // Use vanilla lightmap for night vision effect.
