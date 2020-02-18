@@ -2,29 +2,17 @@ package io.github.yamporg.darkness;
 
 import net.minecraftforge.common.config.Config;
 
-@Config(modid = DarknessMod.MODID, category = "")
+@Config(modid = DarknessMod.MODID)
 public class DarknessConfig {
-    public static GeneralCategory general = new GeneralCategory();
+    public static boolean darkOverworld = true;
+    public static boolean darkNether = true;
+    public static boolean darkEnd = true;
+    public static boolean darkDefault = true;
+    public static boolean darkSkyless = true;
 
-    public static class GeneralCategory {
-        public boolean enable = true;
-        public boolean enableDarkNether = true;
-        public boolean enableDarkEnd = true;
-        public boolean hardcore = false;
-    }
+    public static boolean hardcore = false;
+    public static float[] moonPhaseFactors = {};
 
-    public static ConstantsCategory constants = new ConstantsCategory();
-
-    public static class ConstantsCategory {
-        @Config.RangeDouble(min = 0, max = 1)
-        public float minWorldSunBrightness = Math.ulp(0);
-
-        @Config.RangeDouble(min = 0, max = 1)
-        public float minBlockSunBrightness = 0.05F;
-
-        @Config.RangeDouble(min = 0, max = 1)
-        public float minBlockBrightness = 0;
-
-        public float gammaOverride = -1;
-    }
+    public static int[] blacklistByID = {};
+    public static String[] blacklistByName = {};
 }

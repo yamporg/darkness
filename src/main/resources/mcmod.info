@@ -1,12 +1,14 @@
 [
-{
-  "modid": "darkness",
-  "name": "Darkness",
-  "description": "Changes minimal light/brightness level.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "https://github.com/yamporg/darkness",
-  "updateUrl": "",
-  "authorList": ["Ivan Trubach"]
-}
+  {
+    "modid": "darkness",
+    "name": "Darkness",
+    "description": "Adds dynamic moon light and changes minimal light/brightness level.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/yamporg/darkness",
+    "updateUrl": "",
+    "authorList": [
+      "Ivan Trubach"
+    ]
+  }
 ]

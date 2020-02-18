@@ -1,11 +1,9 @@
 {
-    "required": true,
-    "package": "io.github.yamporg.darkness.mixins",
-    "minVersion": "0.7.3",
-    "compatibilityLevel": "JAVA_8",
-    "client": [
-        "MixinEntityRenderer",
-        "MixinWorld",
-        "MixinWorldProviderHell"
-    ]
+  "required": true,
+  "package": "io.github.yamporg.darkness.mixins",
+  "minVersion": "0.7.3",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinEntityRenderer"
+  ]
 }

@@ -1,17 +1,29 @@
-darkness.general=Основные
+darkness.general=Тьма
 darkness.general.tooltip=
 
-darkness.general.enable=Включить тьму
-darkness.general.enable.tooltip=Отключает все модификации. Выключите эту опцию, если вам не нравится тьма.
+darkness.general.darkoverworld=Тьма в Верхнем мире
+darkness.general.darkoverworld.tooltip=Отключает минимальный уровень освещения в Верхнем мире.
 
-darkness.general.enabledarknether=Тьма в Нижнем мире
-darkness.general.enabledarknether.tooltip=Отключает минимальный уровень освещения в Нижнем мире.
+darkness.general.darknether=Тьма в Нижнем мире
+darkness.general.darknether.tooltip=Отключает минимальный уровень освещения в Нижнем мире.
 
-darkness.general.enabledarkend=Тьма в Краю
-darkness.general.enabledarkend.tooltip=Отключает минимальный уровень освещения в Краю.
+darkness.general.darkend=Тьма в Краю
+darkness.general.darkend.tooltip=Отключает минимальный уровень освещения в Краю.
+
+darkness.general.darkdefault=Тьма с небом
+darkness.general.darkdefault.tooltip=Отключает минимальный уровень освещения в измерениях с небом.
+
+darkness.general.darkskyless=Тьма без неба
+darkness.general.darkskyless.tooltip=Отключает минимальный уровень освещения в измерениях без неба.
 
 darkness.general.hardcore=Кромешная тьма
-darkness.general.hardcore.tooltip=Ночью темно, хоть глаз выколи. Отключает минимальный уровень освещения поверхности.
+darkness.general.hardcore.tooltip=Ночью темно, хоть глаз выколи. Отключает динамический лунный свет.
 
-darkness.constants=Настройки
-darkness.constants.tooltip=Ручное изменение минимального уровня освещения.
+darkness.general.moonphasefactors=Яркость фаз луны
+darkness.general.moonphasefactors.tooltip=Лунный свет для каждой из восьми фаз.
+
+darkness.general.blacklistbyid=Чёрный список по ID
+darkness.general.blacklistbyid.tooltip=Чёрный список по идентификатору измерения.
+
+darkness.general.blacklistbyname=Чёрный список по названию
+darkness.general.blacklistbyname.tooltip=Чёрный список по названию типа измерения.

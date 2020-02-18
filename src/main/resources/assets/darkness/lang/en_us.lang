@@ -1,17 +1,29 @@
-darkness.general=General
+darkness.general=Darkness
 darkness.general.tooltip=
 
-darkness.general.enable=Enable Darkness
-darkness.general.enable.tooltip=Enables all modifications. Disable this option if you don’t like darkness.
+darkness.general.darkoverworld=Darkness in the Overworld
+darkness.general.darkoverworld.tooltip=Disables minimal brightness level in the Overworld dimension.
 
-darkness.general.enabledarknether=Darkness in The Nether
-darkness.general.enabledarknether.tooltip=Disables minimal brightness level in The Nether dimension.
+darkness.general.darknether=Darkness in the Nether
+darkness.general.darknether.tooltip=Disables minimal brightness level in the Nether dimension.
 
-darkness.general.enabledarkend=Darkness in The End
-darkness.general.enabledarkend.tooltip=Disables minimal brightness level in The End dimension.
+darkness.general.darkend=Darkness in the End
+darkness.general.darkend.tooltip=Disables minimal brightness level in the End dimension.
+
+darkness.general.darkdefault=Darkness with sky
+darkness.general.darkdefault.tooltip=Disables minimal brightness level in the other dimensions with sky.
+
+darkness.general.darkskyless=Darkness without sky
+darkness.general.darkskyless.tooltip=Disables minimal brightness level in the other dimensions without sky.
 
 darkness.general.hardcore=Hardcore Darkness
-darkness.general.hardcore.tooltip=Pitch-black nights. Disables minimal brightness level on the surface.
+darkness.general.hardcore.tooltip=Pitch-black nights. Disables dynamic moon light.
 
-darkness.constants=Settings
-darkness.constants.tooltip=Manual minimal brightness level adjustment.
+darkness.general.moonphasefactors=Moon Phases Brightness
+darkness.general.moonphasefactors.tooltip=Moon light for each of the 8 moon phases.
+
+darkness.general.blacklistbyid=Blacklist by ID
+darkness.general.blacklistbyid.tooltip=Blacklist dimensions by ID.
+
+darkness.general.blacklistbyname=Blacklist by name
+darkness.general.blacklistbyname.tooltip=Blacklist dimensions by name.
