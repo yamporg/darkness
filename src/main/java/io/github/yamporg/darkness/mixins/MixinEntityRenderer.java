@@ -26,9 +26,7 @@ public abstract class MixinEntityRenderer {
     private static final String UPDATE_DYNAMIC_TEXTURE =
             "Lnet/minecraft/client/renderer/texture/DynamicTexture;updateDynamicTexture()V";
 
-    @Inject(
-            method = "updateLightmap",
-            at = @At(value = "INVOKE", target = UPDATE_DYNAMIC_TEXTURE))
+    @Inject(method = "updateLightmap", at = @At(value = "INVOKE", target = UPDATE_DYNAMIC_TEXTURE))
     private void onUpdateLightmap(float partialTicks, CallbackInfo ci) {
         if (!lightmapUpdateNeeded) {
             return;
