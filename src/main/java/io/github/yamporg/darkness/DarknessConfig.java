@@ -10,6 +10,9 @@ public class DarknessConfig {
     public static boolean darkDefault = true;
     public static boolean darkSkyless = true;
 
+    public static boolean darkNetherFog = true;
+    public static boolean darkEndFog = true;
+
     public static boolean hardcore = false;
     public static float[] moonPhaseFactors = {};
 

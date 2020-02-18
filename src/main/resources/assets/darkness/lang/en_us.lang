@@ -16,6 +16,12 @@ darkness.general.darkdefault.tooltip=Disables minimal brightness level in the ot
 darkness.general.darkskyless=Darkness without sky
 darkness.general.darkskyless.tooltip=Disables minimal brightness level in the other dimensions without sky.
 
+darkness.general.darknetherfog=No fog in the Nether
+darkness.general.darknetherfog.tooltip=Disables red fog in the End dimension (noticeable with “Night Vision” effect).
+
+darkness.general.darkendfog=No fog in the End
+darkness.general.darkendfog.tooltip=Disables pink fog in the End dimension (noticeable with “Night Vision” effect).
+
 darkness.general.hardcore=Hardcore Darkness
 darkness.general.hardcore.tooltip=Pitch-black nights. Disables dynamic moon light.
 
