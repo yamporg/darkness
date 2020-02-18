@@ -31,19 +31,25 @@ public abstract class MixinEntityRenderer {
         if (!lightmapUpdateNeeded) {
             return;
         }
+        World world = mc.world;
+        if (world == null) {
+            return;
+        }
+
         // Use vanilla lightmap for night vision effect.
         if (mc.player.isPotionActive(MobEffects.NIGHT_VISION)) {
             return;
         }
         // Same for the lightning.
-        if (mc.world.getLastLightningBolt() > 0) {
+        if (world.getLastLightningBolt() > 0) {
             return;
         }
         // Check against dimension blacklist.
-        if (blacklistDim(mc.world.provider)) {
+        if (blacklistDim(world.provider)) {
             return;
         }
-        this.updateLuminance(partialTicks);
+
+        this.updateLuminance(partialTicks, world);
     }
 
     private static boolean blacklistDim(WorldProvider dim) {
@@ -127,11 +133,7 @@ public abstract class MixinEntityRenderer {
         return lerp(w * w, moon, 1f);
     }
 
-    private void updateLuminance(float partialTicks) {
-        World world = mc.world;
-        if (world == null) {
-            return;
-        }
+    private void updateLuminance(float partialTicks, World world) {
         WorldProvider dim = world.provider;
         DimensionType dimType = dim.getDimensionType();
 
@@ -233,11 +235,13 @@ public abstract class MixinEntityRenderer {
         final float g = ((c >> 8) & 0xFF) / 255f;
         final float b = ((c >> 16) & 0xFF) / 255f;
         final float l = luminance(r, g, b);
-
-        final float f = l > 0 ? Math.min(1f, lTarget / l) : 0;
-        if (f == 1f) {
+        if (l <= 0f) {
             return c;
         }
+        if (lTarget >= l) {
+            return c;
+        }
+        final float f = lTarget / l;
         c = 0xFF000000;
         c |= Math.round(f * r * 255);
         c |= Math.round(f * g * 255) << 8;
