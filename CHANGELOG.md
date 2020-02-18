@@ -1,6 +1,1 @@
-- Added dynamic moon light.
-- Improved lightmap computation based on the True Darkness mod for Fabric.
-- Changed options in config. If you’ve made any changes, you’ll have to apply them again.
-- Probably fixed standalone jar builds not being reobfuscated.
-- Mod compatibility should be a bit better.
-- Updated mod description in mcmod.info.
+- Added an option to disable in-game config GUI. 
