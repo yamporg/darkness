@@ -2,3 +2,4 @@
 - Updated description in mcmod.info.
 - Improved lightmap computation based on the True Darkness mod for Fabric.
 - Changed config options.  It’s recommended to delete existing configs before installing the update.
+- Probably fixed standalone jar builds not being reobfuscated.
