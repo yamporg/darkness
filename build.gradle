@@ -6,7 +6,7 @@ buildscript {
         maven { url = 'https://plugins.gradle.org/m2' }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.0.190'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:4.0.13'
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
         classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.4.0'
     }
@@ -36,7 +36,8 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2855'
-    compile 'org.spongepowered:mixin:0.8.2'
+    implementation 'org.spongepowered:mixin:0.8.2'
+    annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 }
 
 // See https://github.com/MinecraftForge/ForgeGradle/issues/627

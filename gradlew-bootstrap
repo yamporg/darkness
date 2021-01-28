@@ -1,7 +1,7 @@
 #!/bin/sh -e
 # Gradle Wrapper Bootstrap
 
-version=4.10.3
+version=6.8.1
 distURL=https://services.gradle.org/distributions/gradle-${version}-bin.zip
 
 bootstrap() {
