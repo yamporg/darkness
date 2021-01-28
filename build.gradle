@@ -6,19 +6,20 @@ buildscript {
         maven { url = 'https://plugins.gradle.org/m2' }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.0.190'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
         classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.4.0'
     }
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
+
+apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'com.matthewprenger.cursegradle'
 
-version = '0.2.1'
+// -------------------------------------------------------------------------- //
+
 group = 'io.github.yamporg.darkness'
+version = '0.3.0'
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
@@ -26,52 +27,54 @@ compileJava {
 }
 
 minecraft {
-    version = '1.12.2-14.23.5.2847'
-    mappings = 'stable_39'
-    coreMod = 'io.github.yamporg.darkness.DarknessLoadingPlugin'
-    runDir = 'run'
-
-    replace '@VERSION@', project.version
+    mappings channel: 'stable', version: '39-1.12'
 }
-
-jar.manifest.attributes(
-        'FMLCorePluginContainsFMLMod': true,
-        'FMLCorePlugin': 'io.github.yamporg.DarknessLoadingPlugin',
-        'ForceLoadAsMod': true,
-        'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-        'MixinConfigs': 'darkness.mixins.json',
-)
 
 repositories {
     maven { url = 'https://repo.spongepowered.org/maven' }
 }
 
 dependencies {
-    compile 'org.spongepowered:mixin:0.8.1-SNAPSHOT'
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2855'
+    compile 'org.spongepowered:mixin:0.8.2'
 }
 
-reobf {
-    shadowJar {
-        mappingType = 'SEARGE'
-        classpath = sourceSets.main.compileClasspath
+// See https://github.com/MinecraftForge/ForgeGradle/issues/627
+configurations.all {
+    resolutionStrategy {
+        force 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-nightly-20150209'
     }
 }
-tasks.shadowJar.finalizedBy reobfShadowJar
-tasks.jar.finalizedBy reobfJar
 
-processResources {
-    inputs.property 'version', project.version
-    inputs.property 'mcversion', project.minecraft.version
+// -------------------------------------------------------------------------- //
 
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version': project.version, 'mcversion': project.minecraft.version
-    }
-
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
+// See https://docs.gradle.org/4.10.3/userguide/working_with_files.html#sec:reproducible_archives
+tasks.withType(AbstractArchiveTask) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
 }
+
+// See https://github.com/MinecraftForge/ForgeGradle/issues/358
+// See https://github.com/md-5/SpecialSource/issues/40
+tasks.withType(net.minecraftforge.gradle.userdev.tasks.RenameJarInPlace) {
+    def xs = ['--stable']
+    args.each { xs << it }
+    args = xs.toArray([] as String[])
+
+    // And --stable option is available since v1.8.5 while ForgeGradle uses v1.8.3.
+    // See https://github.com/md-5/SpecialSource/commit/5dbf0ee84ae02085b4bce7ea9101f16ed6ba8f29
+    tool = 'net.md-5:SpecialSource:1.8.6:shaded' 
+}
+
+tasks.register('sourceJar', Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+jar.manifest.attributes(
+    'FMLCorePluginContainsFMLMod': true,
+    'FMLCorePlugin': 'io.github.yamporg.DarknessLoadingPlugin',
+)
 
 curseforge {
     if (project.hasProperty('curseForgeApiKey')) {
@@ -84,8 +87,11 @@ curseforge {
         changelogType = 'markdown'
         changelog = file('CHANGELOG.md')
 
-        mainArtifact shadowJar
+        mainArtifact(jar) {
+            relations {
+                requiredDependency 'mixinbootstrap'
+            }
+        }
         addArtifact sourceJar
-        addArtifact jar
     }
 }

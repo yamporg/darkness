@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 public class DarknessMod {
     static final String MOD_ID = "darkness";
     static final String NAME = "Darkness";
-    static final String VERSION = "@VERSION@";
+    static final String VERSION = "0.3.0";
 
     static final String GUI_FACTORY = "io.github.yamporg.darkness.GuiFactory";
 }
