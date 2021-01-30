@@ -26,17 +26,39 @@ compileJava {
     sourceCompatibility = targetCompatibility = '1.8'
 }
 
+// For some reason resources are not loaded in runClient task
+// unless we put them to class dir directly. Newer version of
+// Minecraft work just fine though. That’s weird.
+//
+// See https://github.com/MinecraftForge/ForgeGradle/issues/717
+// See also https://redd.it/e4hfzz
+sourceSets {
+   main {
+       output.resourcesDir = java.outputDir
+   }
+}
+
 minecraft {
     mappings channel: 'stable', version: '39-1.12'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+            property 'fml.coreMods.load', 'io.github.yamporg.darkness.DarknessLoadingPlugin'
+        }
+    }
 }
 
 repositories {
-    maven { url = 'https://repo.spongepowered.org/maven' }
+    maven { url 'https://repo.spongepowered.org/maven' }
+    maven { url 'https://cursemaven.com' }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2855'
-    implementation 'org.spongepowered:mixin:0.8.2'
+    implementation 'curse.maven:mixinbootstrap-357178:3076610' // MixinBootstrap v1.0.5, Mixin v0.8.2
     annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 }
 
@@ -49,12 +71,16 @@ configurations.all {
 
 // -------------------------------------------------------------------------- //
 
+// Make archive builds reproducible.
+//
 // See https://docs.gradle.org/4.10.3/userguide/working_with_files.html#sec:reproducible_archives
 tasks.withType(AbstractArchiveTask) {
     preserveFileTimestamps = false
     reproducibleFileOrder = true
 }
 
+// Set zero timestamps in reobfJar task too.
+//
 // See https://github.com/MinecraftForge/ForgeGradle/issues/358
 // See https://github.com/md-5/SpecialSource/issues/40
 tasks.withType(net.minecraftforge.gradle.userdev.tasks.RenameJarInPlace) {
@@ -74,7 +100,7 @@ tasks.register('sourceJar', Jar) {
 
 jar.manifest.attributes(
     'FMLCorePluginContainsFMLMod': true,
-    'FMLCorePlugin': 'io.github.yamporg.DarknessLoadingPlugin',
+    'FMLCorePlugin': 'io.github.yamporg.darkness.DarknessLoadingPlugin',
 )
 
 curseforge {
