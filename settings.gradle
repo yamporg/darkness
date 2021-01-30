@@ -1,1 +1,20 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://files.minecraftforge.net/maven' }
+        maven { url 'https://repo.spongepowered.org/maven' }
+        gradlePluginPortal()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            switch (requested.id) {
+            case 'net.minecraftforge.gradle':
+                useModule "net.minecraftforge.gradle:ForgeGradle:${requested.version}"
+                break
+            case 'org.spongepowered.mixin':
+                useModule "org.spongepowered:mixingradle:${requested.version}"
+                break
+            }
+        }
+    }
+}
 rootProject.name = 'darkness'
