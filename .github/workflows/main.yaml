@@ -40,6 +40,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Reformat code
-        uses: axel-op/googlejavaformat-action@v2.0.0
+        uses: axel-op/googlejavaformat-action@v3
         with:
           args: "--replace --aosp"
