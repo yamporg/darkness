@@ -4,6 +4,9 @@ pluginManagement {
         maven { url 'https://repo.spongepowered.org/maven' }
         gradlePluginPortal()
     }
+    // The following resolution strategy allows using plugin DSL
+    // even though MixinGradle and ForgeGradle do not follow
+    // artifact naming convention for Gradle plugins.
     resolutionStrategy {
         eachPlugin {
             switch (requested.id) {

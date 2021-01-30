@@ -7,23 +7,6 @@ plugins {
 group 'io.github.yamporg.darkness'
 version '0.3.0'
 
-sourceCompatibility = targetCompatibility = '1.8'
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
-}
-
-// For some reason resources are not loaded in runClient task
-// unless we put them to class dir directly. Newer version of
-// Minecraft work just fine though. That’s weird.
-//
-// See https://github.com/MinecraftForge/ForgeGradle/issues/717
-// See also https://redd.it/e4hfzz
-sourceSets {
-   main {
-       output.resourcesDir = java.outputDir
-   }
-}
-
 minecraft {
     mappings channel: 'stable', version: '39-1.12'
 
@@ -44,22 +27,51 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2855'
-    implementation 'curse.maven:mixinbootstrap-357178:3076610' // MixinBootstrap v1.0.5, Mixin v0.8.2
+
+    // MixinBootstrap v1.0.5 provides Mixin v0.8.2.
+    //
+    // See https://www.curseforge.com/minecraft/mc-mods/mixinbootstrap/files/3076610
+    implementation 'curse.maven:mixinbootstrap-357178:3076610'
+
     annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 }
 
+// Minecraft 1.12 requires both 2.9.4-nightly-20150209 and 2.9.2-nightly-20140822,
+// and the latter does not exist. We fix that by using the newer version.
+//
 // See https://github.com/MinecraftForge/ForgeGradle/issues/627
 configurations.all {
     resolutionStrategy {
-        force 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-nightly-20150209'
+        eachDependency {
+            if (requested.group == 'org.lwjgl.lwjgl' && requested.name == 'lwjgl-platform') {
+                useVersion '2.9.4-nightly-20150209'
+            }
+        }
     }
 }
 
-// -------------------------------------------------------------------------- //
+// Enable sourcesJar task and set source and target Java version.
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+// For some reason resources are not loaded in runClient task
+// unless we put them to class dir directly. Newer version of
+// Minecraft work just fine though. That’s weird.
+//
+// See https://github.com/MinecraftForge/ForgeGradle/issues/717
+// See also https://redd.it/e4hfzz
+sourceSets {
+   main {
+       output.resourcesDir = java.outputDir
+   }
+}
 
 // Make archive builds reproducible.
 //
-// See https://docs.gradle.org/4.10.3/userguide/working_with_files.html#sec:reproducible_archives
+// See https://docs.gradle.org/6.8.1/userguide/working_with_files.html#sec:reproducible_archives
 tasks.withType(AbstractArchiveTask) {
     preserveFileTimestamps = false
     reproducibleFileOrder = true
@@ -77,11 +89,6 @@ tasks.withType(net.minecraftforge.gradle.userdev.tasks.RenameJarInPlace) {
     // And --stable option is available since v1.8.5 while ForgeGradle uses v1.8.3.
     // See https://github.com/md-5/SpecialSource/commit/5dbf0ee84ae02085b4bce7ea9101f16ed6ba8f29
     tool = 'net.md-5:SpecialSource:1.8.6:shaded' 
-}
-
-tasks.register('sourceJar', Jar) {
-    from sourceSets.main.allSource
-    classifier = 'sources'
 }
 
 jar.manifest.attributes(
@@ -105,6 +112,6 @@ curseforge {
                 requiredDependency 'mixinbootstrap'
             }
         }
-        addArtifact sourceJar
+        addArtifact sourcesJar
     }
 }
