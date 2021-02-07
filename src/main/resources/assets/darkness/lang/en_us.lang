@@ -28,11 +28,14 @@ darkness.main.hardcore.tooltip=Pitch-black nights. Disables dynamic moon light.
 darkness.main.moonphasefactors=Moon Phases Brightness
 darkness.main.moonphasefactors.tooltip=Moon light for each of the 8 moon phases.
 
+darkness.main.invertblacklist=Invert blacklist
+darkness.main.invertblacklist.tooltip=Blacklist behaves as whitelist.
+
 darkness.main.blacklistbyid=Blacklist by ID
-darkness.main.blacklistbyid.tooltip=Blacklist dimensions by ID.
+darkness.main.blacklistbyid.tooltip=Blacklist dimensions by numeric ID. List available dimensions using command "/forge dimensions".
 
 darkness.main.blacklistbyname=Blacklist by name
-darkness.main.blacklistbyname.tooltip=Blacklist dimensions by name.
+darkness.main.blacklistbyname.tooltip=Blacklist dimensions by name. List available dimensions using command "/forge dimensions".
 
 darkness.main.disableconfiggui=Disable config GUI
 darkness.main.disableconfiggui.tooltip=Disables in-game config GUI.

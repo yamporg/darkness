@@ -59,7 +59,10 @@ public abstract class MixinEntityRenderer {
         if (dimType == DimensionType.THE_END && !DarknessConfig.darkEnd) {
             return true;
         }
+        return blacklistContains(dim, dimType) ^ DarknessConfig.invertBlacklist;
+    }
 
+    private static boolean blacklistContains(WorldProvider dim, DimensionType dimType) {
         String dimName = dimType.getName();
         for (String blacklistName : DarknessConfig.blacklistByName) {
             if (blacklistName != dimName) {

@@ -18,6 +18,7 @@ public class DarknessConfig {
     public static boolean hardcore = false;
     public static float[] moonPhaseFactors = {};
 
+    public static boolean invertBlacklist = false;
     public static int[] blacklistByID = {};
     public static String[] blacklistByName = {};
 }
