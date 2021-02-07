@@ -28,11 +28,7 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2855'
 
-    // MixinBootstrap v1.0.5 provides Mixin v0.8.2.
-    //
-    // See https://www.curseforge.com/minecraft/mc-mods/mixinbootstrap/files/3076610
-    implementation 'curse.maven:mixinbootstrap-357178:3076610'
-
+    implementation 'org.spongepowered:mixin:0.8.2'
     annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 }
 
