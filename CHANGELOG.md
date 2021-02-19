@@ -1,1 +1,0 @@
-- Added invertBlacklist config option for whitelisting dimensions instead of blacklisting.
